@@ -12,13 +12,14 @@
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "sw-precache": "^5.2.1",
     "tachyons": "^4.11.1"
   },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts start",    
+    "build": "react-scripts build && sw-precache --root=build --static-file-globs=\"build/**/!(*map*)\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
